@@ -123,28 +123,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Numpad
  * ,-----------------------------------------------------------------------------------.
- * |NumLck|      |      |      |      |  (   |   )  |  7   |  8   |  9   |  /   | Bksp |
+ * |      |      |      |      |      |  (   |   )  |  7   |  8   |  9   |  /   | Bksp |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Tab  |      |      |      |      |  [   |   ]  |  4   |  5   |  6   |  *   | Del  |
+ * |      |      |      |      |      |  [   |   ]  |  4   |  5   |  6   |  *   | Del  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Esc  |      |      |      |      |  {   |   }  |  1   |  2   |  3   |  -   |  =   |
+ * |      |      |      |      |      |  {   |   }  |  1   |  2   |  3   |  -   |  =   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |Shift |      |      |      |      |  \   |   |  |  0   |  .   |  ,   |  +   |Enter |
+ * |      |      |      |      |      |  \   |   |  |  0   |  .   |  ,   |  +   |Enter |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |             |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_NUMPAD] = LAYOUT_preonic_grid( \
-    KC_NLCK, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LPRN, KC_RPRN, KC_P7,   KC_P8,   KC_P9,   KC_PSLS, KC_BSPC, \
-    KC_TAB,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, KC_P4,   KC_P5,   KC_P6,   KC_PAST, KC_DEL,  \
-    KC_ESC,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LCBR, KC_RCBR, KC_P1,   KC_P2,   KC_P3,   KC_PMNS, KC_PEQL, \
-    KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSLS, KC_PIPE, KC_P0,   KC_PDOT, KC_PCMM, KC_PPLS, KC_PENT, \
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LPRN, KC_RPRN, KC_P7,   KC_P8,   KC_P9,   KC_PSLS, KC_BSPC, \
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, KC_P4,   KC_P5,   KC_P6,   KC_PAST, KC_DEL,  \
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LCBR, KC_RCBR, KC_P1,   KC_P2,   KC_P3,   KC_PMNS, KC_PEQL, \
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSLS, KC_PIPE, KC_P0,   KC_PDOT, KC_PCMM, KC_PPLS, KC_PENT, \
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______  \
 ),
 
 /* Mouse
  * ,-----------------------------------------------------------------------------------.
- * |  F11 |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10 |  F12 |
+ * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |MClick| MSUp |RClick|      |      |RClick| SUp  |Mclick|      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
