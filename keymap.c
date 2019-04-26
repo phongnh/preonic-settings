@@ -6,11 +6,11 @@ enum preonic_layers {
     _QWERTY,
     _COLEMAK,
     _DVORAK,
-    _NUMPAD,
-    _MOUSE,
     _LOWER,
     _RAISE,
     _ADJUST,
+    _NUMPAD,
+    _MOUSE,
 };
 
 enum preonic_keycodes {
@@ -18,10 +18,10 @@ enum preonic_keycodes {
     QWERTY,
     COLEMAK,
     DVORAK,
-    NUMPAD,
-    MOUSE,
     LOWER,
     RAISE,
+    NUMPAD,
+    MOUSE,
     BACKLIT,
 };
 
@@ -121,48 +121,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER, KC_SPC, KC_SPC, RAISE, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT  \
 ),
 
-/* Numpad
- * ,-----------------------------------------------------------------------------------.
- * |      |      |      |      |      |  (   |   )  |  7   |  8   |  9   |  /   | Bksp |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |  [   |   ]  |  4   |  5   |  6   |  *   | Del  |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |  {   |   }  |  1   |  2   |  3   |  -   |  =   |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |  \   |   |  |  0   |  .   |  ,   |  +   |Enter |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |             |      |      |      |      |      |
- * `-----------------------------------------------------------------------------------'
- */
-[_NUMPAD] = LAYOUT_preonic_grid( \
-    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LPRN, KC_RPRN, KC_P7,   KC_P8,   KC_P9,   KC_PSLS, KC_BSPC, \
-    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, KC_P4,   KC_P5,   KC_P6,   KC_PAST, KC_DEL,  \
-    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LCBR, KC_RCBR, KC_P1,   KC_P2,   KC_P3,   KC_PMNS, KC_PEQL, \
-    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSLS, KC_PIPE, KC_P0,   KC_PDOT, KC_PCMM, KC_PPLS, KC_PENT, \
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______  \
-),
-
-/* Mouse
- * ,-----------------------------------------------------------------------------------.
- * |      |      |      |      |      |      |      |      |      |      |      |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |MClick| MSUp |RClick|      |      |RClick| SUp  |Mclick|      |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |LClick|MSLeft|MSDown|MRight|LClick|LClick|SLeft |SDown |SRight|      |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |      |      |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |             |      |      |      |      |      |
- * `-----------------------------------------------------------------------------------'
- */
-[_MOUSE] = LAYOUT_preonic_grid( \
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
-    _______, _______, KC_BTN3, KC_MS_U, KC_BTN2, _______, _______, KC_BTN2, KC_WH_U, KC_BTN3, _______, _______, \
-    _______, KC_BTN1, KC_MS_L, KC_MS_D, KC_MS_R, KC_BTN1, KC_BTN1, KC_WH_L, KC_WH_D, KC_WH_R, _______, _______, \
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______  \
-),
-
 /* Lower
  * ,-----------------------------------------------------------------------------------.
  * |   ~  |   !  |   @  |   #  |   $  |   %  |   ^  |   &  |   *  |   (  |   )  | Bksp |
@@ -209,7 +167,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------------------------------------.
  * |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |CAPLCK| Reset| WAKE |      |      |NUMPAD|MOUSE |      |      |      |PRTSCR|INSERT|
+ * |CAPLCK| Reset| WAKE |      |      |NUMPAD|MOUSE |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |SLEEP |      |AU_TOG|AGnorm|AGswap|Qwerty|Colemk|Dvorak|Custom|      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -220,9 +178,51 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_ADJUST] = LAYOUT_preonic_grid( \
     KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  \
-    KC_CAPS, RESET,   KC_WAKE, _______, _______, KC_FN1,  KC_FN2,  _______, _______, _______, KC_PSCR, KC_INS,  \
-    _______, _______, KC_SLEP, _______, AU_TOG,  AG_NORM, AG_SWAP, QWERTY,  COLEMAK, DVORAK,  PHONG,  _______,  \
+    _______, RESET,   KC_WAKE, _______, _______, KC_FN1,  KC_FN2,  _______, _______, _______, _______, KC_DEL,  \
+    KC_CAPS, _______, KC_SLEP, _______, AU_TOG,  AG_NORM, AG_SWAP, QWERTY,  COLEMAK, DVORAK,  PHONG,   _______, \
     _______, _______, _______, _______, _______, BL_STEP, _______, KC_MUTE, KC_F14,  KC_F15,  _______, _______, \
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______  \
+),
+
+/* Numpad
+ * ,-----------------------------------------------------------------------------------.
+ * |      |      |      |      |      |  (   |   )  |  7   |  8   |  9   |  /   | Bksp |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |  [   |   ]  |  4   |  5   |  6   |  *   | Del  |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |  {   |   }  |  1   |  2   |  3   |  -   |  =   |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |  \   |   |  |  0   |  .   |  ,   |  +   |Enter |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |             |      |      |      |      |      |
+ * `-----------------------------------------------------------------------------------'
+ */
+[_NUMPAD] = LAYOUT_preonic_grid( \
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LPRN, KC_RPRN, KC_P7,   KC_P8,   KC_P9,   KC_PSLS, KC_BSPC, \
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, KC_P4,   KC_P5,   KC_P6,   KC_PAST, KC_DEL,  \
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LCBR, KC_RCBR, KC_P1,   KC_P2,   KC_P3,   KC_PMNS, KC_PEQL, \
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSLS, KC_PIPE, KC_P0,   KC_PDOT, KC_PCMM, KC_PPLS, KC_PENT, \
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______  \
+),
+
+/* Mouse
+ * ,-----------------------------------------------------------------------------------.
+ * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |      |MClick| MSUp |RClick|      |      |RClick| SUp  |Mclick|      |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |LClick|MSLeft|MSDown|MRight|LClick|LClick|SLeft |SDown |SRight|      |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |             |      |      |      |      |      |
+ * `-----------------------------------------------------------------------------------'
+ */
+[_MOUSE] = LAYOUT_preonic_grid( \
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
+    _______, _______, KC_BTN3, KC_MS_U, KC_BTN2, _______, _______, KC_BTN2, KC_WH_U, KC_BTN3, _______, _______, \
+    _______, KC_BTN1, KC_MS_L, KC_MS_D, KC_MS_R, KC_BTN1, KC_BTN1, KC_WH_L, KC_WH_D, KC_WH_R, _______, _______, \
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______  \
 ),
 
@@ -324,24 +324,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
         }
         return false;
         break;
-    case NUMPAD:
-        if (record->event.pressed) {
-            #ifdef AUDIO_ENABLE
-                PLAY_SONG(tone_symbol);
-            #endif
-            set_single_persistent_default_layer(_NUMPAD);
-        }
-        return false;
-        break;
-    case MOUSE:
-        if (record->event.pressed) {
-            #ifdef AUDIO_ENABLE
-                PLAY_SONG(tone_mouse);
-            #endif
-            set_single_persistent_default_layer(_MOUSE);
-        }
-        return false;
-        break;
     case LOWER:
         if (record->event.pressed) {
             layer_on(_LOWER);
@@ -361,6 +343,24 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
         else {
             layer_off(_RAISE);
             update_tri_layer(_LOWER, _RAISE, _ADJUST);
+        }
+        return false;
+        break;
+    case NUMPAD:
+        if (record->event.pressed) {
+            #ifdef AUDIO_ENABLE
+                PLAY_SONG(tone_symbol);
+            #endif
+            set_single_persistent_default_layer(_NUMPAD);
+        }
+        return false;
+        break;
+    case MOUSE:
+        if (record->event.pressed) {
+            #ifdef AUDIO_ENABLE
+                PLAY_SONG(tone_mouse);
+            #endif
+            set_single_persistent_default_layer(_MOUSE);
         }
         return false;
         break;
